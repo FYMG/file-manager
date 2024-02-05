@@ -9,6 +9,7 @@ const commands = {
   cp: 'cp',
   mv: 'mv',
   rm: 'rm',
+  os: 'os',
 };
 
 export default commands;

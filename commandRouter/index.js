@@ -9,6 +9,7 @@ import rn from './modules/fs/rn.js';
 import cp from './modules/fs/cp.js';
 import mv from './modules/fs/mv.js';
 import rm from './modules/fs/rm.js';
+import getOsInfo from './modules/os/getOsInfo.js';
 
 export default class CommandRouter {
   constructor(currentDir) {
@@ -16,7 +17,7 @@ export default class CommandRouter {
   }
 
   async execute(command, args) {
-    switch (command) {
+    switch (command.toLowerCase()) {
       case commands.up: {
         this.currentDir = await up(this.currentDir);
         break;
@@ -66,6 +67,12 @@ export default class CommandRouter {
       case commands.rm: {
         if (args[0]) await rm(this.currentDir, args[0]);
         else console.log(messages.invalidArg);
+        break;
+      }
+
+      case commands.os: {
+        if (args[0]) await getOsInfo(args[0]);
+        else console.log(messages.missingParams);
         break;
       }
 

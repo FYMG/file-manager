@@ -1,8 +1,15 @@
+import getArchitecture from '../../commandRouter/modules/os/modules/getArchitecture.js';
+
 const messages = {
   lsDirTypeName: 'Directory',
   lsFileTypeName: 'File',
   operationFailed: 'Operation failed',
   successRename: 'The file was successfully renamed',
+  missingParams: 'Command should be run with parameters',
+  infoEOL: (EOL) => `End of line: ${EOL}`,
+  infoArchitecture: (architecture) => `Architecture: ${architecture}`,
+  infoHomeDir: (homeDir) => `Home directory: ${homeDir}`,
+  infoUserName: (userName) => `Current user name: ${userName}`,
   successCopy: (from, to) =>
     `The file was successfully copied from ${from} to ${to}`,
   successMove: (from, to) => `File moved successfully from ${from} to ${to}`,
