@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs/promises';
-import messages from '../../../untils/messages.js';
+import messages from '../../../untils/constants/messages.js';
 
 const up = async (currDir) => {
   const absolutePath = path.resolve(currDir);

@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import messages from '../../../untils/messages.js';
+import messages from '../../../untils/constants/messages.js';
 
 const ls = async (currDir) => {
   try {

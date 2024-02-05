@@ -1,9 +1,10 @@
-import messages from '../untils/messages.js';
+import messages from '../untils/constants/messages.js';
 import up from './commands/nwd/up.js';
 import cd from './commands/nwd/cd.js';
-import commands from '../untils/commands.js';
+import commands from '../untils/constants/commands.js';
 import ls from './commands/nwd/ls.js';
 import cat from './commands/fs/cat.js';
+import add from './commands/fs/add.js';
 
 export default class CommandRouter {
   constructor(currentDir) {
@@ -30,6 +31,12 @@ export default class CommandRouter {
 
       case commands.cat: {
         if (args[0]) await cat(this.currentDir, args[0]);
+        else console.log(messages.invalidArg);
+        break;
+      }
+
+      case commands.add: {
+        if (args[0]) await add(this.currentDir, args[0]);
         else console.log(messages.invalidArg);
         break;
       }
