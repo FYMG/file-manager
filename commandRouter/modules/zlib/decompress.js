@@ -14,8 +14,6 @@ const decompress = async (currentDir, pathToFile, pathToDecompressFile) => {
     `${fileName}`
   );
 
-  console.log(decompressFilePath);
-
   const fileExist = await doesFileExist(filePath);
   const newFileExist = await doesFileExist(decompressFilePath);
 
@@ -35,7 +33,6 @@ const decompress = async (currentDir, pathToFile, pathToDecompressFile) => {
 
     console.log(messages.successDecompress(decompressFilePath));
   } catch (err) {
-    console.log(err);
     console.log(messages.operationFailed);
   }
 };
