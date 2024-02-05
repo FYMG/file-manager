@@ -2,6 +2,7 @@ import os from 'os';
 import readline from 'readline';
 import messages from './untils/messages.js';
 import CommandRouter from './commandRouter/index.js';
+import commands from './untils/commands.js';
 
 const userArg = process.argv.filter(
   (arg) => arg.startsWith('--') && arg.includes('username')
@@ -28,7 +29,7 @@ const runFileManager = async () => {
 
   rl.on('line', (input) => {
     console.log('\x1Bc');
-    if (input === '.exit') {
+    if (input === commands.exit) {
       exit();
     } else {
       const [userCommand, ...userArgs] = input.split(' ');
