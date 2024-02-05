@@ -1,14 +1,14 @@
 import messages from '../untils/constants/messages.js';
-import up from './commands/nwd/up.js';
-import cd from './commands/nwd/cd.js';
+import up from './modules/nwd/up.js';
+import cd from './modules/nwd/cd.js';
 import commands from '../untils/constants/commands.js';
-import ls from './commands/nwd/ls.js';
-import cat from './commands/fs/cat.js';
-import add from './commands/fs/add.js';
-import rn from './commands/fs/rn.js';
-import cp from './commands/fs/cp.js';
-import mv from './commands/fs/mv.js';
-import rm from './commands/fs/rm.js';
+import ls from './modules/nwd/ls.js';
+import cat from './modules/fs/cat.js';
+import add from './modules/fs/add.js';
+import rn from './modules/fs/rn.js';
+import cp from './modules/fs/cp.js';
+import mv from './modules/fs/mv.js';
+import rm from './modules/fs/rm.js';
 
 export default class CommandRouter {
   constructor(currentDir) {
