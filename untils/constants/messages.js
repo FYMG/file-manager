@@ -2,6 +2,7 @@ const messages = {
   lsDirTypeName: 'Directory',
   lsFileTypeName: 'File',
   operationFailed: 'Operation failed',
+  successRename: 'The file was successfully renamed',
   invalidMessage:
     'Invalid input. Please check the correctness of the entered command!',
   invalidArg: 'Invalid input. Required arguments missing!',
