@@ -33,7 +33,7 @@ const runFileManager = async () => {
     } else {
       const [userCommand, ...userArgs] = input.split(' ');
       cm.execute(userCommand, userArgs).then(() => {
-        console.log(cm.currentDir);
+        console.log(messages.dirInfo(cm.currentDir));
       });
     }
   });

@@ -1,4 +1,5 @@
 const messages = {
+  operationFailed: 'Operation failed',
   invalidMessage:
     'Invalid input. Please check the correctness of the entered command!',
   invalidArg: 'Invalid input. Required arguments missing!',

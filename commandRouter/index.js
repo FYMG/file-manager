@@ -1,4 +1,5 @@
 import messages from '../untils/messages.js';
+import up from './commands/up.js';
 
 export default class CommandRouter {
   constructor(currentDir) {
@@ -8,7 +9,7 @@ export default class CommandRouter {
   async execute(command, args) {
     switch (command) {
       case 'up': {
-        console.log('up', args, this.currentDir);
+        this.currentDir = await up(this.currentDir);
         break;
       }
       default:
