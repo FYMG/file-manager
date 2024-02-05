@@ -12,6 +12,7 @@ import rm from './modules/fs/rm.js';
 import getOsInfo from './modules/os/getOsInfo.js';
 import hash from './modules/hash/hash.js';
 import compress from './modules/zlib/compress.js';
+import decompress from './modules/zlib/decompress.js';
 
 export default class CommandRouter {
   constructor(currentDir) {
@@ -87,6 +88,13 @@ export default class CommandRouter {
       case commands.compress: {
         if (args[0] && args[1])
           await compress(this.currentDir, args[0], args[1]);
+        else console.log(messages.invalidArg);
+        break;
+      }
+
+      case commands.decompress: {
+        if (args[0] && args[1])
+          await decompress(this.currentDir, args[0], args[1]);
         else console.log(messages.invalidArg);
         break;
       }

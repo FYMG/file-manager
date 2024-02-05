@@ -6,6 +6,8 @@ const messages = {
   operationFailed: 'Operation failed',
   successRename: 'The file was successfully renamed',
   successCompress: (fileName) => `File (${fileName}) successfully compressed`,
+  successDecompress: (fileName) =>
+    `File (${fileName}) successfully decompressed`,
   missingParams: 'Command should be run with parameters',
   infoEOL: (EOL) => `End of line: ${EOL}`,
   infoArchitecture: (architecture) => `Architecture: ${architecture}`,
