@@ -5,6 +5,7 @@ const messages = {
   lsFileTypeName: 'File',
   operationFailed: 'Operation failed',
   successRename: 'The file was successfully renamed',
+  successCompress: (fileName) => `File (${fileName}) successfully compressed`,
   missingParams: 'Command should be run with parameters',
   infoEOL: (EOL) => `End of line: ${EOL}`,
   infoArchitecture: (architecture) => `Architecture: ${architecture}`,

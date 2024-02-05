@@ -11,6 +11,8 @@ const commands = {
   rm: 'rm',
   os: 'os',
   hash: 'hash',
+  compress: 'compress',
+  decompress: 'decompress',
 };
 
 export default commands;
