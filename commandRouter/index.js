@@ -7,6 +7,7 @@ import cat from './commands/fs/cat.js';
 import add from './commands/fs/add.js';
 import rn from './commands/fs/rn.js';
 import cp from './commands/fs/cp.js';
+import mv from './commands/fs/mv.js';
 
 export default class CommandRouter {
   constructor(currentDir) {
@@ -51,6 +52,12 @@ export default class CommandRouter {
 
       case commands.cp: {
         if (args[0] && args[1]) await cp(this.currentDir, args[0], args[1]);
+        else console.log(messages.invalidArg);
+        break;
+      }
+
+      case commands.mv: {
+        if (args[0] && args[1]) await mv(this.currentDir, args[0], args[1]);
         else console.log(messages.invalidArg);
         break;
       }

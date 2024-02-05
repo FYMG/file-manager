@@ -5,6 +5,7 @@ const messages = {
   successRename: 'The file was successfully renamed',
   successCopy: (from, to) =>
     `The file was successfully copied from ${from} to ${to}`,
+  successMove: (from, to) => `File moved successfully from ${from} to ${to}`,
   invalidMessage:
     'Invalid input. Please check the correctness of the entered command!',
   invalidArg: 'Invalid input. Required arguments missing!',

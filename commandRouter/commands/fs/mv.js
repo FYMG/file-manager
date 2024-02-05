@@ -1,16 +1,16 @@
 import path from 'path';
-import fs from 'fs';
+import fs, { constants } from 'fs';
 import { pipeline } from 'stream';
 import messages from '../../../untils/constants/messages.js';
 import doesFileExist from '../../../untils/helpers/doesFileExist.js';
 
-const cp = async (currentDir, pathToFile, pathToCopy) => {
+const mv = async (currentDir, pathToFile, pathToMove) => {
   const filePath = path.resolve(currentDir, pathToFile);
   const fileName = path.basename(filePath);
-  const copyPath = path.resolve(currentDir, pathToCopy, fileName);
+  const movePath = path.resolve(currentDir, pathToMove, fileName);
 
   const fileExist = await doesFileExist(filePath);
-  const newFileExist = await doesFileExist(copyPath);
+  const newFileExist = await doesFileExist(movePath);
 
   if (!fileExist || newFileExist) {
     console.log(messages.operationFailed);
@@ -19,15 +19,16 @@ const cp = async (currentDir, pathToFile, pathToCopy) => {
 
   try {
     const readableStream = fs.createReadStream(filePath, 'utf-8');
-    const writableStream = fs.createWriteStream(copyPath);
+    const writableStream = fs.createWriteStream(movePath);
 
     await new Promise((res, rej) => {
-      pipeline(readableStream, writableStream, (err) => {
+      pipeline(readableStream, writableStream, async (err) => {
         if (err) {
           rej(new Error());
           return;
         }
-        console.log(messages.successCopy(filePath, copyPath));
+        await fs.promises.unlink(filePath);
+        console.log(messages.successMove(filePath, movePath));
         res();
       });
     });
@@ -36,4 +37,4 @@ const cp = async (currentDir, pathToFile, pathToCopy) => {
   }
 };
 
-export default cp;
+export default mv;
