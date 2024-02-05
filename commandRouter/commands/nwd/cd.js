@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs/promises';
-import messages from '../../untils/messages.js';
+import messages from '../../../untils/messages.js';
 
 const cd = async (currDir, targetPath) => {
   let newPath;

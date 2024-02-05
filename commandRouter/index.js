@@ -1,8 +1,8 @@
 import messages from '../untils/messages.js';
-import up from './commands/up.js';
-import cd from './commands/cd.js';
+import up from './commands/nwd/up.js';
+import cd from './commands/nwd/cd.js';
 import commands from '../untils/commands.js';
-import ls from './commands/ls.js';
+import ls from './commands/nwd/ls.js';
 
 export default class CommandRouter {
   constructor(currentDir) {
