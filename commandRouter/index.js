@@ -2,6 +2,7 @@ import messages from '../untils/messages.js';
 import up from './commands/up.js';
 import cd from './commands/cd.js';
 import commands from '../untils/commands.js';
+import ls from './commands/ls.js';
 
 export default class CommandRouter {
   constructor(currentDir) {
@@ -18,6 +19,11 @@ export default class CommandRouter {
       case commands.cd: {
         if (args[0]) this.currentDir = await cd(this.currentDir, args[0]);
         else console.log(messages.invalidArg);
+        break;
+      }
+
+      case commands.ls: {
+        await ls(this.currentDir);
         break;
       }
 

@@ -1,4 +1,6 @@
 const messages = {
+  lsDirTypeName: 'Directory',
+  lsFileTypeName: 'File',
   operationFailed: 'Operation failed',
   invalidMessage:
     'Invalid input. Please check the correctness of the entered command!',
