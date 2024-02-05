@@ -6,6 +6,7 @@ import ls from './commands/nwd/ls.js';
 import cat from './commands/fs/cat.js';
 import add from './commands/fs/add.js';
 import rn from './commands/fs/rn.js';
+import cp from './commands/fs/cp.js';
 
 export default class CommandRouter {
   constructor(currentDir) {
@@ -44,6 +45,12 @@ export default class CommandRouter {
 
       case commands.rn: {
         if (args[0] && args[1]) await rn(this.currentDir, args[0], args[1]);
+        else console.log(messages.invalidArg);
+        break;
+      }
+
+      case commands.cp: {
+        if (args[0] && args[1]) await cp(this.currentDir, args[0], args[1]);
         else console.log(messages.invalidArg);
         break;
       }

@@ -6,6 +6,7 @@ const commands = {
   cat: 'cat',
   add: 'add',
   rn: 'rn',
+  cp: 'cp',
 };
 
 export default commands;
