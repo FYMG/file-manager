@@ -10,6 +10,7 @@ import cp from './modules/fs/cp.js';
 import mv from './modules/fs/mv.js';
 import rm from './modules/fs/rm.js';
 import getOsInfo from './modules/os/getOsInfo.js';
+import hash from './modules/hash/hash.js';
 
 export default class CommandRouter {
   constructor(currentDir) {
@@ -72,6 +73,12 @@ export default class CommandRouter {
 
       case commands.os: {
         if (args[0]) await getOsInfo(args[0]);
+        else console.log(messages.missingParams);
+        break;
+      }
+
+      case commands.hash: {
+        if (args[0]) await hash(this.currentDir, args[0]);
         else console.log(messages.missingParams);
         break;
       }

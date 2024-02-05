@@ -14,6 +14,7 @@ const messages = {
     `The file was successfully copied from ${from} to ${to}`,
   successMove: (from, to) => `File moved successfully from ${from} to ${to}`,
   successDelete: (fileName) => `File deleted successfully: ${fileName}`,
+  successHash: (file, hash) => `The hash of the file (${file}) is: ${hash}`,
   invalidMessage:
     'Invalid input. Please check the correctness of the entered command!',
   invalidArg: 'Invalid input. Required arguments missing!',

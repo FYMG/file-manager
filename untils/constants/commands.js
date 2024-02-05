@@ -10,6 +10,7 @@ const commands = {
   mv: 'mv',
   rm: 'rm',
   os: 'os',
+  hash: 'hash',
 };
 
 export default commands;
