@@ -3,6 +3,7 @@ import up from './commands/nwd/up.js';
 import cd from './commands/nwd/cd.js';
 import commands from '../untils/commands.js';
 import ls from './commands/nwd/ls.js';
+import cat from './commands/fs/cat.js';
 
 export default class CommandRouter {
   constructor(currentDir) {
@@ -24,6 +25,12 @@ export default class CommandRouter {
 
       case commands.ls: {
         await ls(this.currentDir);
+        break;
+      }
+
+      case commands.cat: {
+        if (args[0]) await cat(this.currentDir, args[0]);
+        else console.log(messages.invalidArg);
         break;
       }
 
