@@ -7,8 +7,8 @@ const hash = async (currentDir, pathToFile) => {
   try {
     const filePath = path.resolve(currentDir, pathToFile);
     const data = await fs.readFile(filePath, 'utf8');
-    const hash = crypto.createHash('sha256').update(data).digest('hex');
-    console.log(messages.successHash(filePath, hash));
+    const hashString = crypto.createHash('sha256').update(data).digest('hex');
+    console.log(messages.successHash(filePath, hashString));
   } catch (err) {
     console.log(messages.operationFailed);
   }

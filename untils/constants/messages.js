@@ -1,5 +1,3 @@
-import getArchitecture from '../../commandRouter/modules/os/modules/getArchitecture.js';
-
 const messages = {
   lsDirTypeName: 'Directory',
   lsFileTypeName: 'File',

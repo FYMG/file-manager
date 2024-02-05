@@ -1,5 +1,5 @@
 import path from 'path';
-import fs, { constants } from 'fs';
+import fs from 'fs';
 import { pipeline } from 'stream';
 import messages from '../../../untils/constants/messages.js';
 import doesFileExist from '../../../untils/helpers/doesFileExist.js';
